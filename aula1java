@@ -1,0 +1,48 @@
+class Carro{
+
+    private string Marca;
+    private string Modelo;
+    private int AnoFabricacao;
+    private int Cor;
+    private int Velocidade;
+
+    Carro (string marca, string modelo, int anofabricacao, int cor, int velocidade){
+        this.Marca = marca;
+        this.Modelo = modelo;
+        this.AnoFabricacao = anofabricacao;
+        this.Cor = cor;
+        this.Velocidade = velocidade;
+    }
+
+    public string getMarca(){
+        return Marca;
+    }
+
+    public string getModelo(){
+        return Modelo;
+    }
+
+    public int getAnofabricacao(){
+        return AnoFabricacao;
+    }
+
+    public int getCor(){
+        return Cor;
+    }
+
+    public int getVelocidade(){
+        return Velocidade;
+    }
+
+    public class main{
+        public static void main(String[] args) {
+            
+            Carro carro1 = new Carro("Ferrari", " 296 GTB", 2023, "Vermelho", 300)
+
+            System.out.println("Marca: " + carro1.getMarca()); // Obtém e imprime a marca do carro
+            System.out.println("Modelo: " + carro1.getModelo()); // Obtém e imprime o modelo do carro
+            System.out.println("Ano da Fabricação: " + carro1.getAnofabricacao()); // Obtém e imprime o ano da fabricacao do carro
+            System.out.println("Cor: " + carro1.getCor()); // Obtém e imprime a cor do carro
+            System.out.println("Velocidade: " + carro1.getVelocidade()); // Obtém e imprime a velocidade do carro
+    }
+}
