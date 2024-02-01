@@ -1,12 +1,12 @@
 class Carro{
 
-    private string Marca;
-    private string Modelo;
+    private String Marca;
+    private String Modelo;
     private int AnoFabricacao;
-    private int Cor;
+    private String Cor;
     private int Velocidade;
 
-    Carro (string marca, string modelo, int anofabricacao, int cor, int velocidade){
+    Carro (String marca, String modelo, int anofabricacao, String cor, int velocidade){
         this.Marca = marca;
         this.Modelo = modelo;
         this.AnoFabricacao = anofabricacao;
@@ -14,11 +14,11 @@ class Carro{
         this.Velocidade = velocidade;
     }
 
-    public string getMarca(){
+    public String getMarca(){
         return Marca;
     }
 
-    public string getModelo(){
+    public String getModelo(){
         return Modelo;
     }
 
@@ -26,18 +26,16 @@ class Carro{
         return AnoFabricacao;
     }
 
-    public int getCor(){
+    public String getCor(){
         return Cor;
     }
 
     public int getVelocidade(){
         return Velocidade;
     }
-
-    public class main{
         public static void main(String[] args) {
             
-            Carro carro1 = new Carro("Ferrari", " 296 GTB", 2023, "Vermelho", 300)
+            Carro carro1 = new Carro("Ferrari", " 296 GTB", 2023, "Vermelho", 300);
 
             System.out.println("Marca: " + carro1.getMarca()); // Obtém e imprime a marca do carro
             System.out.println("Modelo: " + carro1.getModelo()); // Obtém e imprime o modelo do carro
