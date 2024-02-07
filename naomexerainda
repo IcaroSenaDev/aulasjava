@@ -1,0 +1,40 @@
+package maiordeidade;
+
+import java.util.Scanner;
+
+public class wholenumbers {
+	
+    public static void main(String[] args) {
+       
+    	Scanner scanner = new Scanner(System.in);
+
+        int[] numeros = new int[5];
+        
+        System.out.println("Digite 5 números inteiros:");
+
+        // Lendo os números e armazenando no vetor
+        for (int i = 0; i < 5; i++) {
+            numeros[i] = scanner.nextInt();
+        }
+        
+        // Inicializando variáveis para armazenar o maior e o menor número
+        int maior = numeros[0];
+        int menor = numeros[0];
+        
+        // Encontrando o maior e o menor número
+        for (int i = 1; i < 5; i++) {
+            if (numeros[i] > maior) {
+                maior = numeros[i];
+            }
+            if (numeros[i] < menor) {
+                menor = numeros[i];
+            }
+        }
+        
+        // Imprimindo o maior e o menor número
+        System.out.println("O maior número é: " + maior);
+        System.out.println("O menor número é: " + menor);
+        
+        scanner.close();
+    }
+}
