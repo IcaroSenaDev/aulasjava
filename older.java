@@ -1,5 +1,3 @@
-package maiordeidade;
-
 import java.util.*;
 
 public class older {
