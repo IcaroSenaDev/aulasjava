@@ -10,16 +10,16 @@ public class wholenumbers {
 
         int[] numeros = new int[5];
         
-        System.out.println("Digite 5 números inteiros:");
+        System.out.println("Enter a number: ");
 
-        // Lendo os números e armazenando no vetor
-        for (int i = 0; i < 5; i++) {
+     
+        for (int i = 0; i < 5; i++) { // Criando o vetor
             numeros[i] = scanner.nextInt();
         }
         
-        // Inicializando variáveis para armazenar o maior e o menor número
-        int maior = numeros[0];
-        int menor = numeros[0];
+        
+        int maior = numeros[0]; // Armazenando o Maior número
+        int menor = numeros[0]; // Armazenando o Menor número
         
         // Encontrando o maior e o menor número
         for (int i = 1; i < 5; i++) {
@@ -31,9 +31,9 @@ public class wholenumbers {
             }
         }
         
-        // Imprimindo o maior e o menor número
-        System.out.println("O maior número é: " + maior);
-        System.out.println("O menor número é: " + menor);
+       
+        System.out.println("O maior número é: " + maior); //IMPRIMINDO O MAIOR NUMERO
+        System.out.println("O menor número é: " + menor); //IMPRIMINDO O MENOR NUMERO
         
         scanner.close();
     }
