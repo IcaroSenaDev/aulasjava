@@ -1,4 +1,4 @@
-package teste;
+package atividadessenai;
 
 import java.util.Scanner;
 public class Vetor {
@@ -18,7 +18,7 @@ public class Vetor {
 		return vetor;
 	}
 }
-	class Matriz{
+ class Matriz{
 		private int [][] matriz;
 		
 		public void preencher (int m, int n) {
@@ -26,7 +26,7 @@ public class Vetor {
 			Scanner scanner = new Scanner (System.in); // OBTER OS DADOS DO TECLADO ( USUARIO )
 			System.out.println("Digite os números inteiros para preencher a matriz:");
 			for (int i = 0; i < m; i++) {
-				for (j = 0; j < n; j++) {
+				for (int j = 0; j < n; j++) {
 					matriz[i][j] = scanner.nextInt(); // LENDO AS INFORMAÇÕES DO TECLADO
 				}
 			}
@@ -38,7 +38,7 @@ public class Vetor {
 		}
 		
 		class Verificador{
-			public boolean Par(int n) {
+			public boolean Par(int[] n) {
 				return n % 2 == 0;
 			}
 		}
@@ -76,8 +76,8 @@ public class Vetor {
 					int[][] matrizNumeros = matriz.getMatriz();
 					
 						for (int [] linha : matrizNumeros) {
-							for (int [] coluna : matrizNumeros) {
-								   System.out.println(numero + " é par? " + verificador.éPar(numero));					
+							for (int [] numero : linha) {
+								   System.out.println(numero + " é par? " + verificador.Par(numero));					
 					}
 				}
 			}
