@@ -36,6 +36,8 @@ public class Principaç {
 	    }
 	}
 
+//DIVIDIR ISSO EM OUTRA ABA PARA QUE NÃO OCORRA ERROS
+
 package atividadesdosenai;
 
 import java.util.Scanner;
