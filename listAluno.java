@@ -1,5 +1,7 @@
-package atividadessenai;
+package atividadesdosenai;
+
 import java.util.ArrayList;
+
 public class Aluno {
 	private String nome;
 	private int idade;
@@ -35,8 +37,16 @@ public class Aluno {
 		Aluno.add(new Aluno("Leandro", 32, 483432));
 		Aluno.add(new Aluno("Renan", 18, 344324));
 		
-		Aluno.remove(3);
-		
 		System.out.println(Aluno.toString());
+
+		int matriculaRemover = 196507;
+        for (int i = 0; i < Aluno.size(); i++) {
+            if (Aluno.get(i).getMatricula() == matriculaRemover) {
+                Aluno.remove(i);
+                break;
+            }
+        }
+		
+		System.out.println("\nALUNOS APÓS A REMOÇÃO DE UM MEMBRO DA LISTA PELA MATRICULA: " + "\n\n" + Aluno.toString());
 	}
 }
