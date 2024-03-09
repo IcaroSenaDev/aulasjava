@@ -40,7 +40,7 @@ public class Elevador {
 
 	public void Entrar() {
 		
-		if (pessoaspresentes >= capacidadedoelevador) {
+		if (pessoaspresentes > capacidadedoelevador) {
 			System.out.println("Capacidade Máxima de Pessoas Atingida!!");
 		} else {
 			System.out.println("Entrou mais uma pessoa no Elevador");			
@@ -92,41 +92,41 @@ public class Elevador {
 		elevador.Entrar();
 		elevador.Entrar();
 		
-		System.out.println(elevador.toString());
+		System.out.println(elevador.toString()); // ANDAR 1 - 3 PESSOAS
 		
 		elevador.Subir();
 		elevador.Subir();
 		
 		elevador.Entrar();
 		elevador.Entrar();
-		elevador.Entrar();
+		elevador.Entrar(); // VAI ALERTAR A CAPACIDADE MAXIMA
 		
-		System.out.println(elevador.toString());
-		
-		elevador.Descer();
-		
-		elevador.Sair();
-		elevador.Sair();
-		elevador.Sair();
-		
-		System.out.println(elevador.toString());
+		System.out.println(elevador.toString()); // ANDAR 3 - 5 PESSOAS ( CAPACIDADE ATINGIDA )
 		
 		elevador.Descer();
+		
+		elevador.Sair();
+		elevador.Sair();
+		elevador.Sair();
+		
+		System.out.println(elevador.toString()); // AMDAR 2 - 2 PESSOAS
+		
 		elevador.Descer();
 		elevador.Descer();
+		elevador.Descer(); // VAI ALERTAR QUE NÃO PODE MAIS DESCER POR ESTAR NO TERREO
 		
-		System.out.println(elevador.toString());
+		System.out.println(elevador.toString()); // ANDAR 0 ( TERREO ) - 2 PESSOAS
 		
 		elevador.Sair();
 		elevador.Sair();
-		elevador.Sair();
+		elevador.Sair(); // ALERTAR QUE NÃO TEM NGM NO ELEVADOR
 		
 		elevador.Subir();
 		elevador.Subir();
 		elevador.Subir();
 		elevador.Subir();
 		elevador.Subir();
-		elevador.Subir();
+		elevador.Subir(); // ALERTAR QUE ESTÁ NO ULTIMO ANDAR, NÃO DAR PRA SUBIR MAIS
 		
 	}
 	
