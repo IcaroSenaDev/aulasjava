@@ -12,7 +12,7 @@ public class Nome {
 		
 		System.out.println(detentos);
 		
-		detentos.remove(2);
+		detentos.remove(1);
 		
 		System.out.println(detentos);
 		
