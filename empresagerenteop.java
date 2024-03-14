@@ -34,37 +34,28 @@ public abstract class Funcionario {
 
 package atividadessenai;
 
-public abstract class Funcionario {
-	private String nome;
-	private int id;
-	private Double salarioBase;
-	public Funcionario(String nome, int id, Double salarioBase) {
-		this.nome = nome;
-		this.id = id;
-		this.salarioBase = salarioBase;
+public class Gerente extends Funcionario {
+	private Double bonus;
+
+	public Gerente(String nome, int id, Double salarioBase, Double bonus) {
+		super(nome, id, salarioBase);
+		this.bonus = bonus;
+	}
+
+	public Double getBonus() {
+		return bonus;
+	}
+
+	public void setBonus(Double bonus) {
+		this.bonus = bonus;
 	}
 	
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public Double getSalarioBase() {
-		return salarioBase;
-	}
-	public void setSalarioBase(Double salarioBase) {
-		this.salarioBase = salarioBase;
-	}
-	
-	public abstract double calcularSalario();
+	@Override
+    public double calcularSalario() {
+        return getSalarioBase() + bonus;
+    }
 }
+
 
 package atividadessenai;
 
