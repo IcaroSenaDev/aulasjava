@@ -29,33 +29,41 @@ public abstract class Funcionario {
 		this.salarioBase = salarioBase;
 	}
 	
-	public abstract void calcularSalario();
+	public abstract double calcularSalario();
 }
 
 package atividadessenai;
 
-public class Gerente extends Funcionario{
-	
-	private Double bonus;
-
-	public Gerente(String nome, int id, Double salarioBase, Double bonus) {
-		super(nome, id, salarioBase);
-		this.bonus = bonus;
-	}
-
-	public Double getBonus() {
-		return bonus;
-	}
-
-	public void setBonus(Double bonus) {
-		this.bonus = bonus;
+public abstract class Funcionario {
+	private String nome;
+	private int id;
+	private Double salarioBase;
+	public Funcionario(String nome, int id, Double salarioBase) {
+		this.nome = nome;
+		this.id = id;
+		this.salarioBase = salarioBase;
 	}
 	
-	public void calcularSalario() {
-		Double salarioTotal = getSalarioBase() + bonus;
-		System.out.println("O salário total do Gerente é de: " + salarioTotal);
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Double getSalarioBase() {
+		return salarioBase;
+	}
+	public void setSalarioBase(Double salarioBase) {
+		this.salarioBase = salarioBase;
 	}
 	
+	public abstract double calcularSalario();
 }
 
 package atividadessenai;
@@ -63,9 +71,9 @@ package atividadessenai;
 public class Operario extends Funcionario{
 	
 	private int horasTrabalhadas;
-	private Double valorHora;
+	private int valorHora;
 
-	public Operario(String nome, int id, Double salarioBase, int horasTrabalhadas, Double valorHora) {
+	public Operario(String nome, int id, Double salarioBase, int horasTrabalhadas, int valorHora) {
 		super(nome, id, salarioBase);
 		this.horasTrabalhadas = horasTrabalhadas;
 		this.valorHora = valorHora;
@@ -79,29 +87,63 @@ public class Operario extends Funcionario{
 		this.horasTrabalhadas = horasTrabalhadas;
 	}
 
-	public Double getValorHora() {
+	public int getValorHora() {
 		return valorHora;
 	}
 
-	public void setValorHora(Double valorHora) {
+	public void setValorHora(int valorHora) {
 		this.valorHora = valorHora;
 	}	
 	
-	public void calcularSalario() {
-		Double salarioTotal = getSalarioBase() + (horasTrabalhadas*valorHora);
-		
-		System.out.println("O salário total do Operario é de: " + salarioTotal);
-	}
+	@Override
+    public double calcularSalario() {
+        return getSalarioBase() + (horasTrabalhadas * valorHora);
+    }
 }
 
 package atividadessenai;
 
+import java.util.Scanner;
+
 public class Empresa {
 	public static void main(String[] args) {
-		Gerente gerente = new Gerente("Ícaro", 754, 1450.93, 300.0);
-		Operario operario = new Operario("Sena", 755, 800.0, 80, 6.42);
 		
-		gerente.calcularSalario();
-		operario.calcularSalario();
+		Scanner scanner = new Scanner (System.in);
+		
+		System.out.println("Informe o nome do gerente:");
+        String nomeGerente = scanner.nextLine();
+		
+		System.out.println("Informe o Id do Gerente: ");
+		int idGerente = scanner.nextInt();
+		
+		System.out.println("Informe o salário base do Gerente: ");
+		Double salarioGerente = scanner.nextDouble();
+		
+		System.out.println("Informe o bonus anual do Gerente: ");
+		Double bonus = scanner.nextDouble();
+		
+		Gerente gerente = new Gerente (nomeGerente, idGerente, salarioGerente, bonus);
+		
+		System.out.println("Informe o nome do operário:");
+        scanner.nextLine();
+        String nomeOperario = scanner.nextLine();
+		
+		System.out.println("Informe o Id do Operario: ");
+		int idOperario = scanner.nextInt();
+		
+		System.out.println("Informe o salario base do Operario: ");
+		Double salarioOperario = scanner.nextDouble();
+		
+		System.out.println("Informe quantas horas trabalhadas o operario teve: ");
+		int horastrabalhadas = scanner.nextInt();
+		
+		System.out.println("Informe quanto é o valor da hora na empresa: ");
+		int horas = scanner.nextInt();
+		
+		Operario operario = new Operario (nomeOperario, idOperario, salarioOperario, horastrabalhadas, horas);
+		
+		System.out.println("Nome: " + gerente.getNome() + " seu salário é de: " + gerente.calcularSalario());
+	     	System.out.println("Nome: " + operario.getNome() + " seu salário é de: " + operario.calcularSalario());
+		
 	}
 }
